@@ -391,7 +391,7 @@ USER laradock
 #####################################
 # PYTHON:
 #####################################
-
+USER root
 ARG INSTALL_PYTHON=false
 ENV INSTALL_PYTHON ${INSTALL_PYTHON}
 RUN if [ ${INSTALL_PYTHON} = true ]; then \
@@ -400,7 +400,7 @@ RUN if [ ${INSTALL_PYTHON} = true ]; then \
   && pip install --upgrade pip  \
   && pip install --upgrade virtualenv \
 ;fi
-
+USER laradock
 #####################################
 # ImageMagick:
 #####################################
